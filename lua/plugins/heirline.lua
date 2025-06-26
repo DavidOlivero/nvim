@@ -9,6 +9,15 @@ return {
       status.component.git_branch(),
       status.component.file_info({
         filename = { modify = ":~:." }, -- esto muestra la ruta absoluta
+        filetype = false
+      }),
+      status.component.file_info({
+        filename = false,
+        filetype = {},
+        file_icon = false,
+        file_modified = false,
+        file_read_only = false,
+        surround = false,
       }),
       status.component.git_diff(),
       status.component.diagnostics(),

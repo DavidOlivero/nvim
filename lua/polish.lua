@@ -11,7 +11,8 @@ vim.api.nvim_command("hi NormalFloat guibg=NONE ctermbg=NONE")
 vim.api.nvim_command("hi FloatBorder guibg=NONE ctermbg=NONE")
 vim.api.nvim_command("hi SignColumn guibg=NONE ctermbg=NONE")
 vim.api.nvim_command("hi LineNr guibg=#2a2a37")
-vim.opt.numberwidth = 6
+vim.opt.numberwidth = 6 -- -> Solo activar con heirline
+-- vim.opt.numberwidth = 4
 vim.api.nvim_command("hi SignColumn guibg=NONE ctermbg=NONE")
 
 -- Menús y elementos flotantes
@@ -41,3 +42,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     vim.api.nvim_command("hi FloatBorder guibg=NONE ctermbg=NONE")
   end,
 })
+
+-- Configuración solo para la barra de estado con lualine
+-- vim.opt.number = true
+-- vim.opt.relativenumber = false
+-- -- vim.opt.signcolumn = "yes"
+-- vim.opt.statuscolumn = "%=%l "
