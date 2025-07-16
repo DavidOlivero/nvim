@@ -51,7 +51,6 @@ return {
           local function silent_log(name, value)
             vim.api.nvim_set_var("angular_lsp_" .. name, value)
           end
-          
           local function get_probe_dir(root_dir)
             local project_root = require("lspconfig.util").find_node_modules_ancestor(root_dir)
             return project_root and (project_root .. "/node_modules") or ""
@@ -61,27 +60,21 @@ return {
           local function get_npm_global_dir()
             local handle = io.popen("npm config get prefix")
             if not handle then return nil end
-            
             local result = handle:read("*a")
             handle:close()
-            
             if not result then return nil end
-            
             -- Limpiar cualquier espacio en blanco o nueva línea
             result = result:gsub("%s+$", "")
-            
             -- Para sistemas Unix/Linux/Mac
             local lib_path = result .. "/lib/node_modules"
             if vim.loop.fs_stat(lib_path) then
               return lib_path
             end
-            
             -- Para Windows
             local win_path = result .. "/node_modules"
             if vim.loop.fs_stat(win_path) then
               return win_path
             end
-            
             return nil
           end
 
@@ -89,8 +82,7 @@ return {
           local function get_angular_core_version(root_dir)
             -- IMPORTANTE: Establecer esto a la versión EXACTA de tu proyecto
             -- Ver el resultado de `npm list @angular/core` para saber la versión exacta
-            local fallback_version = "17.2.0" -- Ajusta esto a tu versión de Angular
-            
+            local fallback_version = "17.3.17" -- Ajusta esto a tu versión de Angular
             local project_root = require("lspconfig.util").find_node_modules_ancestor(root_dir)
             if not project_root then
               silent_log("error_root", "No se pudo encontrar la raíz del proyecto Angular")
@@ -130,47 +122,60 @@ return {
 
           local probe_dir = get_probe_dir(new_root_dir)
           local angular_core_version = get_angular_core_version(new_root_dir)
-          
           -- Registrar información silenciosamente sin mostrar nada al usuario
           silent_log("core_version", angular_core_version)
           silent_log("probe_dir", probe_dir)
-          
           -- Preparar lista de directorios de sondeo
           local probe_locations = {probe_dir}
-          
           -- Añadir directorio npm global
           local npm_global_dir = get_npm_global_dir()
           if npm_global_dir then
             table.insert(probe_locations, npm_global_dir)
             silent_log("npm_global", npm_global_dir)
           end
-          
           -- Añadir la instalación directa de Mason
           local mason_dir = vim.fn.stdpath("data") .. "/mason/packages/angular-language-server/node_modules"
           if vim.loop.fs_stat(mason_dir) then
             table.insert(probe_locations, mason_dir)
             silent_log("mason_dir", mason_dir)
           end
-          
           -- Inicializar el comando base
           new_config.cmd = {"ngserver", "--stdio"}
-          
           -- Añadir los directorios de sondeo como cadenas individuales
           table.insert(new_config.cmd, "--tsProbeLocations")
           table.insert(new_config.cmd, table.concat(probe_locations, ","))
-          
           table.insert(new_config.cmd, "--ngProbeLocations")
           table.insert(new_config.cmd, table.concat(probe_locations, ","))
-          
           -- Sólo añadir --angularCoreVersion si tenemos una versión válida
           if angular_core_version and angular_core_version ~= "" then
             table.insert(new_config.cmd, "--angularCoreVersion")
             table.insert(new_config.cmd, angular_core_version)
           end
-          
           -- Guardar el comando para depuración (accesible vía :lua print(vim.g.angular_lsp_cmd))
           silent_log("cmd", table.concat(new_config.cmd, " "))
         end,
+      },
+      eslint = {
+        on_init = function(client)
+          client.config.settings.workingDirectory = { directory = client.config.root_dir }
+        end,
+        root_dir = require("lspconfig.util").root_pattern(
+          "package.json",
+          ".eslintrc.js",
+          ".eslintrc.json",
+          "eslint.config.js",
+          "eslint.config.mjs",
+          "tsconfig.json"
+        ),
+        on_attach = function(client, bufnr)
+          if client.name == "eslint" then
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              buffer = bufnr,
+              command = "EslintFixAll",
+            })
+          end
+        end,
+        settings = { packageManager = "npm" }
       },
     },
     -- customize how language servers are attached
