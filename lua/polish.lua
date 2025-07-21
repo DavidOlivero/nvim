@@ -48,3 +48,18 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 -- vim.opt.relativenumber = false
 -- -- vim.opt.signcolumn = "yes"
 -- vim.opt.statuscolumn = "%=%l "
+
+-- Configurar historial de undo para evitar problemas
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
+
+-- Crear el directorio si no existe
+local undo_dir = vim.fn.stdpath("data") .. "/undo"
+if vim.fn.isdirectory(undo_dir) == 0 then
+  vim.fn.mkdir(undo_dir, "p")
+end
+
+-- Configuración adicional para estabilidad
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.swapfile = false
