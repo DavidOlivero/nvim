@@ -15,7 +15,7 @@ require("lazy").setup({
   { import = "plugins" },
 } --[[@as LazySpec]], {
   -- Configure any other `lazy.nvim` configuration options here
-  install = { colorscheme = { "astrotheme", "habamax", "tokyonight", "tokyodark", "kanagawa", "kanagawa-wave", "kanagawa-dragon", "kanagawa-lotus", "catppuccin", "gruvbox", "rose-pine" } },
+  install = { colorscheme = { "astrotheme", "habamax", "tokyonight", "tokyodark", "kanagawa", "kanagawa-wave", "kanagawa-dragon", "kanagawa-lotus", "catppuccin", "gruvbox", "rose-pine", "everforest" } },
   ui = { backdrop = 100 },
   performance = {
     rtp = {
