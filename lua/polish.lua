@@ -1,4 +1,4 @@
---if true then return end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+if true then return end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- This will run last in the setup process.
 -- This is just pure lua so anything that doesn't
@@ -63,3 +63,14 @@ end
 vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.swapfile = false
+
+-- Spelling
+vim.opt.spell = true
+vim.opt.spelllang = { 'en_us', 'es' }
+
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})
