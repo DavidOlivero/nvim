@@ -3,10 +3,27 @@ return {
   opts = function(_, opts)
     local status = require("astroui.status")
 
+    local os_component = {
+      provider = function()
+        local os_name = vim.loop.os_uname().sysname
+        if os_name == "Linux" then
+          return " 🐧 " -- espacio antes y después para que respire
+        elseif os_name == "Darwin" then
+          return " 🍎 "
+        elseif os_name:match("Windows") then
+          return " 🪟 "
+        else
+          return " 💻 "
+        end
+      end,
+      hl = { fg = "green", bold = true },
+    }
+
     opts.statusline = { -- statusline
       hl = { fg = "fg", bg = "bg" },
       status.component.mode(),
       status.component.git_branch(),
+      os_component,
       status.component.file_info({
         filename = { modify = ":~:." }, -- esto muestra la ruta absoluta
         filetype = false
