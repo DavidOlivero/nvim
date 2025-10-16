@@ -31,4 +31,4 @@ require("lazy").setup({
   },
 } --[[@as LazyConfig]])
 
-vim.cmd[[colorscheme rose-pine]]
+vim.cmd[[colorscheme kanagawa-wave]]

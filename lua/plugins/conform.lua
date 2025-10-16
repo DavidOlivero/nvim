@@ -2,11 +2,11 @@ return {
   "stevearc/conform.nvim",
   opts = {
     formatters_by_ft = {
-      javascript = { "prettierd", "prettier" },
-      typescript = { "prettierd", "prettier" },
-      html = { "prettierd", "prettier" },
-      htmlangular = { "prettierd", "prettier" },
-      css = { "prettierd", "prettier" },
+      javascript = { "prettierd", "prettierd" },
+      typescript = { "prettierd", "prettierd" },
+      html = { "prettierd", "prettierd" },
+      htmlangular = { "prettierd", "prettierd" },
+      css = { "prettierd", "prettierd" },
     },
     formatters = {
       prettierd = {
@@ -40,7 +40,7 @@ return {
     },
     format_on_save = {
       lsp_fallback = true,
-      timeout_ms = 500,
+      timeout_ms = 5000,
     },
   },
 }
