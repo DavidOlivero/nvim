@@ -15,7 +15,31 @@ require("lazy").setup({
   { import = "plugins" },
 } --[[@as LazySpec]], {
   -- Configure any other `lazy.nvim` configuration options here
-  install = { colorscheme = { "astrotheme", "habamax", "tokyonight", "tokyodark", "kanagawa", "kanagawa-wave", "kanagawa-dragon", "kanagawa-lotus", "catppuccin", "gruvbox", "rose-pine", "everforest", "vscode", "vague" } },
+  install = {
+    colorscheme = {
+      "astrotheme",
+      "habamax",
+      "tokyonight",
+      "tokyodark",
+      "kanagawa",
+      "kanagawa-wave",
+      "kanagawa-dragon",
+      "kanagawa-lotus",
+      "catppuccin",
+      "gruvbox",
+      "rose-pine",
+      "everforest",
+      "vscode",
+      "vague",
+      "retro-theme",
+      "jellybeans",
+      "jellybeans-mono",
+      "jellybeans-muted",
+      "ayu",
+      "OceanicNext",
+      "minimal"
+    }
+  },
   ui = { backdrop = 100 },
   performance = {
     rtp = {
@@ -31,4 +55,4 @@ require("lazy").setup({
   },
 } --[[@as LazyConfig]])
 
-vim.cmd[[colorscheme kanagawa-wave]]
+vim.cmd[[colorscheme minimal]]
