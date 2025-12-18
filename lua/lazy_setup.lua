@@ -55,4 +55,4 @@ require("lazy").setup({
   },
 } --[[@as LazyConfig]])
 
-vim.cmd[[colorscheme minimal]]
+vim.cmd[[colorscheme tokyonight-moon]]
