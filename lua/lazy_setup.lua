@@ -37,7 +37,7 @@ require("lazy").setup({
       "jellybeans-muted",
       "ayu",
       "OceanicNext",
-      "minimal"
+      "minimal",
     }
   },
   ui = { backdrop = 100 },
@@ -55,4 +55,4 @@ require("lazy").setup({
   },
 } --[[@as LazyConfig]])
 
-vim.cmd[[colorscheme tokyonight-moon]]
+vim.cmd[[colorscheme vague]]

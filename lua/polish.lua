@@ -4,65 +4,69 @@
 -- -- This is just pure lua so anything that doesn't
 -- -- fit in the normal config locations above can go here
 --
--- Habilitar transparencia de fondo
-vim.api.nvim_command("hi Normal guibg=NONE ctermbg=NONE")
-vim.api.nvim_command("hi NormalNC guibg=NONE ctermbg=NONE")
-vim.api.nvim_command("hi NormalFloat guibg=NONE ctermbg=NONE")
-vim.api.nvim_command("hi FloatBorder guibg=NONE ctermbg=NONE")
-vim.api.nvim_command("hi SignColumn guibg=NONE ctermbg=NONE")
-vim.api.nvim_command("hi LineNr guibg=#2a2a37")
-vim.opt.numberwidth = 6 -- -> Solo activar con heirline
--- vim.opt.numberwidth = 4
-vim.api.nvim_command("hi SignColumn guibg=NONE ctermbg=NONE")
-
--- Menús y elementos flotantes
-vim.api.nvim_command("hi Pmenu guibg=NONE ctermbg=NONE")
-vim.api.nvim_command("hi PmenuSbar guibg=NONE ctermbg=NONE")
-vim.api.nvim_command("hi PmenuThumb guibg=NONE ctermbg=NONE")
-
--- Neo tree
-vim.api.nvim_command("hi NeoTreeNormal guibg=NONE ctermbg=NONE")
-vim.api.nvim_command("hi NeoTreeFloat guibg=NONE ctermbg=NONE")
-
--- Barras de estado, pestañas, etc.
--- vim.api.nvim_command("hi StatusLine guibg=NONE ctermbg=NONE")
--- vim.api.nvim_command("hi StatusLineNC guibg=NONE ctermbg=NONE")
-vim.api.nvim_command("hi TabLine guibg=NONE ctermbg=NONE")
-vim.api.nvim_command("hi TabLineFill guibg=NONE ctermbg=NONE")
-vim.api.nvim_command("hi TabLineSel guibg=NONE ctermbg=NONE")
-
--- Signos de git
-vim.api.nvim_command("hi GitSignsAdd guibg=NONE")
-vim.api.nvim_command("hi GitSignsChange guibg=NONE")
-vim.api.nvim_command("hi GitSignsDelete guibg=NONE")
-
--- Para asegurar que persista incluso después de cambiar de modo
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  callback = function()
-    vim.api.nvim_command("hi Normal guibg=NONE ctermbg=NONE")
-    vim.api.nvim_command("hi NormalNC guibg=NONE ctermbg=NONE")
-    vim.api.nvim_command("hi NormalFloat guibg=NONE ctermbg=NONE")
-    vim.api.nvim_command("hi NeoTreeNormalNC guibg=NONE ctermbg=NONE")
-    vim.api.nvim_command("hi NeoTreeEndOfBuffer guibg=NONE ctermbg=NONE")
-  end,
-})
-
-vim.api.nvim_create_autocmd({"WinEnter", "BufEnter", "WinLeave"}, {
-  pattern = "*",
-  callback = function()
-    if vim.bo.filetype == "neo-tree" then
-      vim.api.nvim_command("hi NeoTreeNormal guibg=NONE ctermbg=NONE")
-      vim.api.nvim_command("hi NeoTreeNormalNC guibg=NONE ctermbg=NONE")
-    end
-  end,
-})
-
--- Configuración solo para la barra de estado con lualine
-vim.opt.number = true
-vim.opt.relativenumber = false
-vim.opt.signcolumn = "yes"
-vim.opt.statuscolumn = "%=%l "
+-- -- Habilitar transparencia de fondo
+-- vim.api.nvim_command("hi Normal guibg=NONE ctermbg=NONE")
+-- vim.api.nvim_command("hi NormalNC guibg=NONE ctermbg=NONE")
+-- vim.api.nvim_command("hi NormalFloat guibg=NONE ctermbg=NONE")
+-- vim.api.nvim_command("hi FloatBorder guibg=NONE ctermbg=NONE")
+-- vim.api.nvim_command("hi SignColumn guibg=#2a2a37 ctermbg=NONE")
+-- vim.api.nvim_command("hi LineNr guibg=#2a2a37")
+-- vim.api.nvim_command("hi LineNrAbove guibg=#2a2a37")
+-- vim.api.nvim_command("hi LineNrBelow guibg=#2a2a37")
+-- vim.api.nvim_command("hi CursorLineNr guibg=#2a2a37")
+-- vim.opt.numberwidth = 6 -- -> Solo activar con heirline
+-- -- vim.opt.numberwidth = 4
+-- vim.api.nvim_command("hi SignColumn guibg=#2a2a37 ctermbg=NONE")
+--
+--
+-- -- Menús y elementos flotantes
+-- vim.api.nvim_command("hi Pmenu guibg=NONE ctermbg=NONE")
+-- vim.api.nvim_command("hi PmenuSbar guibg=NONE ctermbg=NONE")
+-- vim.api.nvim_command("hi PmenuThumb guibg=NONE ctermbg=NONE")
+--
+-- -- Neo tree
+-- vim.api.nvim_command("hi NeoTreeNormal guibg=NONE ctermbg=NONE")
+-- vim.api.nvim_command("hi NeoTreeFloat guibg=NONE ctermbg=NONE")
+--
+-- -- Barras de estado, pestañas, etc.
+-- -- vim.api.nvim_command("hi StatusLine guibg=NONE ctermbg=NONE")
+-- -- vim.api.nvim_command("hi StatusLineNC guibg=NONE ctermbg=NONE")
+-- vim.api.nvim_command("hi TabLine guibg=NONE ctermbg=NONE")
+-- vim.api.nvim_command("hi TabLineFill guibg=NONE ctermbg=NONE")
+-- vim.api.nvim_command("hi TabLineSel guibg=NONE ctermbg=NONE")
+--
+-- -- Signos de git
+-- vim.api.nvim_command("hi GitSignsAdd guibg=NONE")
+-- vim.api.nvim_command("hi GitSignsChange guibg=NONE")
+-- vim.api.nvim_command("hi GitSignsDelete guibg=NONE")
+--
+-- -- Para asegurar que persista incluso después de cambiar de modo
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   pattern = "*",
+--   callback = function()
+--     vim.api.nvim_command("hi Normal guibg=NONE ctermbg=NONE")
+--     vim.api.nvim_command("hi NormalNC guibg=NONE ctermbg=NONE")
+--     vim.api.nvim_command("hi NormalFloat guibg=NONE ctermbg=NONE")
+--     vim.api.nvim_command("hi NeoTreeNormalNC guibg=NONE ctermbg=NONE")
+--     vim.api.nvim_command("hi NeoTreeEndOfBuffer guibg=NONE ctermbg=NONE")
+--   end,
+-- })
+--
+-- vim.api.nvim_create_autocmd({"WinEnter", "BufEnter", "WinLeave"}, {
+--   pattern = "*",
+--   callback = function()
+--     if vim.bo.filetype == "neo-tree" then
+--       vim.api.nvim_command("hi NeoTreeNormal guibg=NONE ctermbg=NONE")
+--       vim.api.nvim_command("hi NeoTreeNormalNC guibg=NONE ctermbg=NONE")
+--     end
+--   end,
+-- })
+--
+-- -- Configuración solo para la barra de estado con lualine
+-- vim.opt.number = true
+-- vim.opt.relativenumber = true
+-- vim.opt.signcolumn = "yes"
+-- vim.opt.statuscolumn = "%=%l"
 --
 -- -- Configurar historial de undo para evitar problemas
 -- vim.opt.undofile = true
