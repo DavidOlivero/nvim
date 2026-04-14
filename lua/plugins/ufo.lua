@@ -8,12 +8,11 @@ return {
   },
   opts = {
     provider_selector = function(bufnr, filetype, buftype)
-      local ok, parser = pcall(require("nvim-treesitter.parsers").get_parser, bufnr)
-      if ok and parser and parser._root then
+      local ok, parser = pcall(require("nvim-treesitter.parsers").get_parser, bufnr, filetype)
+      if ok and parser then
         return { "treesitter", "indent" }
-      else
-        return { "indent" }
       end
+      return { "indent" }
     end,
   },
 }

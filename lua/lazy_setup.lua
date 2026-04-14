@@ -38,7 +38,11 @@ require("lazy").setup({
       "ayu",
       "OceanicNext",
       "minimal",
-    }
+      "catppuccin-latte",
+      "catppuccin-frappe",
+      "catppuccin-macchiato",
+      "catppuccin-mocha",
+    },
   },
   ui = { backdrop = 100 },
   performance = {
@@ -55,4 +59,4 @@ require("lazy").setup({
   },
 } --[[@as LazyConfig]])
 
-vim.cmd[[colorscheme vague]]
+vim.cmd [[colorscheme catppuccin-mocha]]

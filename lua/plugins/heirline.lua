@@ -5,7 +5,7 @@ return {
 
     local os_component = {
       provider = function()
-        local os_name = vim.loop.os_uname().sysname
+        local os_name = (vim.uv or vim.loop).os_uname().sysname
         if os_name == "Linux" then
           return " 🐧 " -- espacio antes y después para que respire
         elseif os_name == "Darwin" then

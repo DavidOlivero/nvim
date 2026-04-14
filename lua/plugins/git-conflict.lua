@@ -1,6 +1,6 @@
 return {
   {
-    'akinsho/git-conflict.nvim', 
+    "akinsho/git-conflict.nvim",
     version = "*",
     opts = {
       default_mappings = false,

@@ -1,0 +1,248 @@
+-- Custom folder icons inspired by VS Code Material Icon Theme.
+-- mini.icons is the icon provider used by AstroNvim v5 and Neo-tree picks
+-- these up automatically — no extra Neo-tree config needed.
+return {
+  "echasnovski/mini.icons",
+  opts = {
+    directory = {
+      -- ── Source / Code ─────────────────────────────────────────────────
+      ["src"]          = { glyph = "󰴉", hl = "MiniIconsBlue" },
+      ["source"]       = { glyph = "󰴉", hl = "MiniIconsBlue" },
+      ["lib"]          = { glyph = "󰉟", hl = "MiniIconsBlue" },
+      ["libs"]         = { glyph = "󰉟", hl = "MiniIconsBlue" },
+      ["library"]      = { glyph = "󰉟", hl = "MiniIconsBlue" },
+
+      -- ── Components / UI ───────────────────────────────────────────────
+      ["components"]   = { glyph = "󰅱", hl = "MiniIconsYellow" },
+      ["component"]    = { glyph = "󰅱", hl = "MiniIconsYellow" },
+      ["modules"]      = { glyph = "󰅱", hl = "MiniIconsYellow" },
+      ["module"]       = { glyph = "󰅱", hl = "MiniIconsYellow" },
+      ["ui"]           = { glyph = "󰉁", hl = "MiniIconsYellow" },
+      ["layout"]       = { glyph = "󰙒", hl = "MiniIconsYellow" },
+      ["layouts"]      = { glyph = "󰙒", hl = "MiniIconsYellow" },
+      ["widgets"]      = { glyph = "󰙒", hl = "MiniIconsYellow" },
+      ["themes"]       = { glyph = "󰔎", hl = "MiniIconsYellow" },
+      ["theme"]        = { glyph = "󰔎", hl = "MiniIconsYellow" },
+
+      -- ── Pages / Views / Routes ────────────────────────────────────────
+      ["pages"]        = { glyph = "󰗺", hl = "MiniIconsCyan" },
+      ["page"]         = { glyph = "󰗺", hl = "MiniIconsCyan" },
+      ["views"]        = { glyph = "󰗺", hl = "MiniIconsCyan" },
+      ["view"]         = { glyph = "󰗺", hl = "MiniIconsCyan" },
+      ["routes"]       = { glyph = "󰙕", hl = "MiniIconsCyan" },
+      ["route"]        = { glyph = "󰙕", hl = "MiniIconsCyan" },
+      ["router"]       = { glyph = "󰙕", hl = "MiniIconsCyan" },
+      ["navigation"]   = { glyph = "󰙕", hl = "MiniIconsCyan" },
+
+      -- ── Styles / CSS ──────────────────────────────────────────────────
+      ["styles"]       = { glyph = "󰌜", hl = "MiniIconsPurple" },
+      ["style"]        = { glyph = "󰌜", hl = "MiniIconsPurple" },
+      ["css"]          = { glyph = "󰌜", hl = "MiniIconsPurple" },
+      ["scss"]         = { glyph = "󰌜", hl = "MiniIconsPurple" },
+      ["sass"]         = { glyph = "󰌜", hl = "MiniIconsPurple" },
+      ["less"]         = { glyph = "󰌜", hl = "MiniIconsPurple" },
+
+      -- ── Assets / Media ────────────────────────────────────────────────
+      ["assets"]       = { glyph = "󰉖", hl = "MiniIconsOrange" },
+      ["static"]       = { glyph = "󰉖", hl = "MiniIconsOrange" },
+      ["public"]       = { glyph = "󰉋", hl = "MiniIconsOrange" },
+      ["media"]        = { glyph = "󰉔", hl = "MiniIconsOrange" },
+      ["images"]       = { glyph = "󰉔", hl = "MiniIconsOrange" },
+      ["image"]        = { glyph = "󰉔", hl = "MiniIconsOrange" },
+      ["img"]          = { glyph = "󰉔", hl = "MiniIconsOrange" },
+      ["imgs"]         = { glyph = "󰉔", hl = "MiniIconsOrange" },
+      ["icons"]        = { glyph = "󰀲", hl = "MiniIconsOrange" },
+      ["icon"]         = { glyph = "󰀲", hl = "MiniIconsOrange" },
+      ["svg"]          = { glyph = "󰀲", hl = "MiniIconsOrange" },
+      ["svgs"]         = { glyph = "󰀲", hl = "MiniIconsOrange" },
+      ["fonts"]        = { glyph = "󰛖", hl = "MiniIconsOrange" },
+      ["font"]         = { glyph = "󰛖", hl = "MiniIconsOrange" },
+      ["videos"]       = { glyph = "󰕧", hl = "MiniIconsOrange" },
+      ["audio"]        = { glyph = "󰝚", hl = "MiniIconsOrange" },
+
+      -- ── API / Services / Data ─────────────────────────────────────────
+      ["api"]          = { glyph = "󱂛", hl = "MiniIconsGreen" },
+      ["services"]     = { glyph = "󱂛", hl = "MiniIconsGreen" },
+      ["service"]      = { glyph = "󱂛", hl = "MiniIconsGreen" },
+      ["endpoints"]    = { glyph = "󱂛", hl = "MiniIconsGreen" },
+      ["models"]       = { glyph = "󰆧", hl = "MiniIconsGreen" },
+      ["model"]        = { glyph = "󰆧", hl = "MiniIconsGreen" },
+      ["entity"]       = { glyph = "󰆧", hl = "MiniIconsGreen" },
+      ["entities"]     = { glyph = "󰆧", hl = "MiniIconsGreen" },
+      ["schemas"]      = { glyph = "󰆧", hl = "MiniIconsGreen" },
+      ["schema"]       = { glyph = "󰆧", hl = "MiniIconsGreen" },
+      ["database"]     = { glyph = "󱁤", hl = "MiniIconsGreen" },
+      ["db"]           = { glyph = "󱁤", hl = "MiniIconsGreen" },
+      ["data"]         = { glyph = "󱁤", hl = "MiniIconsGreen" },
+      ["graphql"]      = { glyph = "󰡷", hl = "MiniIconsPink" },
+      ["graph"]        = { glyph = "󰡷", hl = "MiniIconsPink" },
+      ["prisma"]       = { glyph = "󰆧", hl = "MiniIconsGreen" },
+
+      -- ── State Management ──────────────────────────────────────────────
+      ["store"]        = { glyph = "󰆼", hl = "MiniIconsPurple" },
+      ["stores"]       = { glyph = "󰆼", hl = "MiniIconsPurple" },
+      ["redux"]        = { glyph = "󰆼", hl = "MiniIconsPurple" },
+      ["state"]        = { glyph = "󰆼", hl = "MiniIconsPurple" },
+      ["context"]      = { glyph = "󰆼", hl = "MiniIconsPurple" },
+      ["contexts"]     = { glyph = "󰆼", hl = "MiniIconsPurple" },
+      ["vuex"]         = { glyph = "󰆼", hl = "MiniIconsPurple" },
+      ["pinia"]        = { glyph = "󰆼", hl = "MiniIconsPurple" },
+
+      -- ── Angular specific ──────────────────────────────────────────────
+      ["guards"]       = { glyph = "󰒃", hl = "MiniIconsRed" },
+      ["guard"]        = { glyph = "󰒃", hl = "MiniIconsRed" },
+      ["pipes"]        = { glyph = "󰟾", hl = "MiniIconsCyan" },
+      ["pipe"]         = { glyph = "󰟾", hl = "MiniIconsCyan" },
+      ["directives"]   = { glyph = "󱒌", hl = "MiniIconsYellow" },
+      ["directive"]    = { glyph = "󱒌", hl = "MiniIconsYellow" },
+      ["interceptors"] = { glyph = "󰕙", hl = "MiniIconsOrange" },
+      ["interceptor"]  = { glyph = "󰕙", hl = "MiniIconsOrange" },
+      ["resolvers"]    = { glyph = "󰆭", hl = "MiniIconsBlue" },
+      ["resolver"]     = { glyph = "󰆭", hl = "MiniIconsBlue" },
+      ["validators"]   = { glyph = "󰄬", hl = "MiniIconsGreen" },
+      ["validator"]    = { glyph = "󰄬", hl = "MiniIconsGreen" },
+      ["decorators"]   = { glyph = "󱌝", hl = "MiniIconsPurple" },
+      ["decorator"]    = { glyph = "󱌝", hl = "MiniIconsPurple" },
+      ["providers"]    = { glyph = "󰡶", hl = "MiniIconsBlue" },
+      ["provider"]     = { glyph = "󰡶", hl = "MiniIconsBlue" },
+
+      -- ── Hooks / Utils / Helpers ───────────────────────────────────────
+      ["hooks"]        = { glyph = "󱡠", hl = "MiniIconsCyan" },
+      ["hook"]         = { glyph = "󱡠", hl = "MiniIconsCyan" },
+      ["utils"]        = { glyph = "󰉟", hl = "MiniIconsBlue" },
+      ["util"]         = { glyph = "󰉟", hl = "MiniIconsBlue" },
+      ["helpers"]      = { glyph = "󰉟", hl = "MiniIconsBlue" },
+      ["helper"]       = { glyph = "󰉟", hl = "MiniIconsBlue" },
+      ["shared"]       = { glyph = "󰉟", hl = "MiniIconsBlue" },
+      ["common"]       = { glyph = "󰉟", hl = "MiniIconsBlue" },
+      ["core"]         = { glyph = "󰷌", hl = "MiniIconsBlue" },
+      ["constants"]    = { glyph = "󰏿", hl = "MiniIconsBlue" },
+      ["config"]       = { glyph = "󰒓", hl = "MiniIconsGrey" },
+      ["configs"]      = { glyph = "󰒓", hl = "MiniIconsGrey" },
+      ["configuration"]= { glyph = "󰒓", hl = "MiniIconsGrey" },
+      ["settings"]     = { glyph = "󰒓", hl = "MiniIconsGrey" },
+
+      -- ── Types / Interfaces ────────────────────────────────────────────
+      ["types"]        = { glyph = "󰛒", hl = "MiniIconsPurple" },
+      ["type"]         = { glyph = "󰛒", hl = "MiniIconsPurple" },
+      ["interfaces"]   = { glyph = "󰛒", hl = "MiniIconsPurple" },
+      ["interface"]    = { glyph = "󰛒", hl = "MiniIconsPurple" },
+      ["typings"]      = { glyph = "󰛒", hl = "MiniIconsPurple" },
+      ["dts"]          = { glyph = "󰛒", hl = "MiniIconsPurple" },
+      ["enums"]        = { glyph = "󰛒", hl = "MiniIconsPurple" },
+      ["enum"]         = { glyph = "󰛒", hl = "MiniIconsPurple" },
+
+      -- ── Tests ─────────────────────────────────────────────────────────
+      ["test"]         = { glyph = "󱞊", hl = "MiniIconsYellow" },
+      ["tests"]        = { glyph = "󱞊", hl = "MiniIconsYellow" },
+      ["__tests__"]    = { glyph = "󱞊", hl = "MiniIconsYellow" },
+      ["spec"]         = { glyph = "󱞊", hl = "MiniIconsYellow" },
+      ["specs"]        = { glyph = "󱞊", hl = "MiniIconsYellow" },
+      ["testing"]      = { glyph = "󱞊", hl = "MiniIconsYellow" },
+      ["e2e"]          = { glyph = "󱞊", hl = "MiniIconsYellow" },
+      ["cypress"]      = { glyph = "󱞊", hl = "MiniIconsYellow" },
+      ["coverage"]     = { glyph = "󱞊", hl = "MiniIconsYellow" },
+      ["__mocks__"]    = { glyph = "󱞊", hl = "MiniIconsGrey" },
+      ["mocks"]        = { glyph = "󱞊", hl = "MiniIconsGrey" },
+      ["fixtures"]     = { glyph = "󱞊", hl = "MiniIconsGrey" },
+
+      -- ── Build / Output ────────────────────────────────────────────────
+      ["dist"]         = { glyph = "󰏗", hl = "MiniIconsOrange" },
+      ["build"]        = { glyph = "󰏗", hl = "MiniIconsOrange" },
+      ["out"]          = { glyph = "󰏗", hl = "MiniIconsOrange" },
+      ["output"]       = { glyph = "󰏗", hl = "MiniIconsOrange" },
+      ["release"]      = { glyph = "󰏗", hl = "MiniIconsOrange" },
+      ["target"]       = { glyph = "󰏗", hl = "MiniIconsOrange" },
+      [".next"]        = { glyph = "󰏗", hl = "MiniIconsOrange" },
+      [".nuxt"]        = { glyph = "󰏗", hl = "MiniIconsOrange" },
+      [".svelte-kit"]  = { glyph = "󰏗", hl = "MiniIconsOrange" },
+      [".angular"]     = { glyph = "󰏗", hl = "MiniIconsRed" },
+
+      -- ── Node / Packages ───────────────────────────────────────────────
+      ["node_modules"] = { glyph = "󰎙", hl = "MiniIconsGrey" },
+      ["packages"]     = { glyph = "󰏖", hl = "MiniIconsBlue" },
+      ["package"]      = { glyph = "󰏖", hl = "MiniIconsBlue" },
+      ["vendor"]       = { glyph = "󰉦", hl = "MiniIconsGrey" },
+      ["plugins"]      = { glyph = "󰹘", hl = "MiniIconsBlue" },
+      ["plugin"]       = { glyph = "󰹘", hl = "MiniIconsBlue" },
+
+      -- ── VCS / CI ──────────────────────────────────────────────────────
+      [".git"]         = { glyph = "󰊢", hl = "MiniIconsOrange" },
+      [".github"]      = { glyph = "󰊤", hl = "MiniIconsGrey" },
+      ["github"]       = { glyph = "󰊤", hl = "MiniIconsGrey" },
+      [".gitlab"]      = { glyph = "󰮠", hl = "MiniIconsOrange" },
+      ["workflows"]    = { glyph = "󰜴", hl = "MiniIconsBlue" },
+      ["actions"]      = { glyph = "󰜴", hl = "MiniIconsBlue" },
+      ["pipeline"]     = { glyph = "󰜴", hl = "MiniIconsBlue" },
+      ["pipelines"]    = { glyph = "󰜴", hl = "MiniIconsBlue" },
+      ["husky"]        = { glyph = "󰜴", hl = "MiniIconsGrey" },
+      [".husky"]       = { glyph = "󰜴", hl = "MiniIconsGrey" },
+
+      -- ── DevOps / Infrastructure ───────────────────────────────────────
+      ["docker"]       = { glyph = "󰡨", hl = "MiniIconsBlue" },
+      ["containers"]   = { glyph = "󰡨", hl = "MiniIconsBlue" },
+      ["kubernetes"]   = { glyph = "󱃾", hl = "MiniIconsBlue" },
+      ["k8s"]          = { glyph = "󱃾", hl = "MiniIconsBlue" },
+      ["helm"]         = { glyph = "󱃾", hl = "MiniIconsBlue" },
+      ["terraform"]    = { glyph = "󱁢", hl = "MiniIconsPurple" },
+      ["ansible"]      = { glyph = "󰒓", hl = "MiniIconsRed" },
+      ["server"]       = { glyph = "󰒋", hl = "MiniIconsBlue" },
+      ["servers"]      = { glyph = "󰒋", hl = "MiniIconsBlue" },
+      ["nginx"]        = { glyph = "󰒋", hl = "MiniIconsGreen" },
+      ["aws"]          = { glyph = "󰸏", hl = "MiniIconsOrange" },
+
+      -- ── Docs ──────────────────────────────────────────────────────────
+      ["docs"]         = { glyph = "󰂺", hl = "MiniIconsCyan" },
+      ["doc"]          = { glyph = "󰂺", hl = "MiniIconsCyan" },
+      ["documentation"]= { glyph = "󰂺", hl = "MiniIconsCyan" },
+      ["documents"]    = { glyph = "󰂺", hl = "MiniIconsCyan" },
+      ["wiki"]         = { glyph = "󰂺", hl = "MiniIconsCyan" },
+      ["notes"]        = { glyph = "󰂺", hl = "MiniIconsCyan" },
+      ["readme"]       = { glyph = "󰂺", hl = "MiniIconsCyan" },
+      ["changelog"]    = { glyph = "󰂺", hl = "MiniIconsCyan" },
+
+      -- ── i18n / Locales ────────────────────────────────────────────────
+      ["i18n"]         = { glyph = "󰗓", hl = "MiniIconsGreen" },
+      ["locales"]      = { glyph = "󰗓", hl = "MiniIconsGreen" },
+      ["locale"]       = { glyph = "󰗓", hl = "MiniIconsGreen" },
+      ["lang"]         = { glyph = "󰗓", hl = "MiniIconsGreen" },
+      ["translations"] = { glyph = "󰗓", hl = "MiniIconsGreen" },
+      ["translation"]  = { glyph = "󰗓", hl = "MiniIconsGreen" },
+
+      -- ── Scripts / Tasks ───────────────────────────────────────────────
+      ["scripts"]      = { glyph = "󱁿", hl = "MiniIconsYellow" },
+      ["script"]       = { glyph = "󱁿", hl = "MiniIconsYellow" },
+      ["cli"]          = { glyph = "󱁿", hl = "MiniIconsYellow" },
+      ["tasks"]        = { glyph = "󰔡", hl = "MiniIconsYellow" },
+      ["task"]         = { glyph = "󰔡", hl = "MiniIconsYellow" },
+      ["tools"]        = { glyph = "󰙴", hl = "MiniIconsGrey" },
+      ["tool"]         = { glyph = "󰙴", hl = "MiniIconsGrey" },
+      ["bin"]          = { glyph = "󱁿", hl = "MiniIconsGrey" },
+      ["generators"]   = { glyph = "󱁿", hl = "MiniIconsGrey" },
+
+      -- ── Environment / Temp ────────────────────────────────────────────
+      ["env"]          = { glyph = "󰙪", hl = "MiniIconsYellow" },
+      [".env"]         = { glyph = "󰙪", hl = "MiniIconsYellow" },
+      ["environments"] = { glyph = "󰙪", hl = "MiniIconsYellow" },
+      ["environment"]  = { glyph = "󰙪", hl = "MiniIconsYellow" },
+      ["temp"]         = { glyph = "󱛟", hl = "MiniIconsGrey" },
+      ["tmp"]          = { glyph = "󱛟", hl = "MiniIconsGrey" },
+      ["cache"]        = { glyph = "󱛟", hl = "MiniIconsGrey" },
+      [".cache"]       = { glyph = "󱛟", hl = "MiniIconsGrey" },
+      ["logs"]         = { glyph = "󰷐", hl = "MiniIconsGrey" },
+      ["log"]          = { glyph = "󰷐", hl = "MiniIconsGrey" },
+      ["backup"]       = { glyph = "󰁯", hl = "MiniIconsGrey" },
+      ["backups"]      = { glyph = "󰁯", hl = "MiniIconsGrey" },
+
+      -- ── Editor specific ───────────────────────────────────────────────
+      [".vscode"]      = { glyph = "󰨞", hl = "MiniIconsBlue" },
+      [".idea"]        = { glyph = "󰬔", hl = "MiniIconsPurple" },
+      [".vim"]         = { glyph = "󰀂", hl = "MiniIconsGreen" },
+      [".nvim"]        = { glyph = "󰀂", hl = "MiniIconsGreen" },
+
+      -- ── Mobile ────────────────────────────────────────────────────────
+      ["android"]      = { glyph = "󰀲", hl = "MiniIconsGreen" },
+      ["ios"]          = { glyph = "󰀳", hl = "MiniIconsGrey" },
+    },
+  },
+}

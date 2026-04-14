@@ -25,9 +25,9 @@ return {
           model = "gpt-4.1-mini",
           timeout = 30000, -- Timeout in milliseconds
             extra_request_body = {
-              temperature = 0.75,
-              max_tokens = 8193,
-            },
+            temperature = 0.75,
+            max_tokens = 8193,
+          },
         },
       },
     },
