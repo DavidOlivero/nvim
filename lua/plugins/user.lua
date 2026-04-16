@@ -22,6 +22,13 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
+      -- Disable treesitter-based scope detection.
+      -- snacks/scope.lua fires on BufReadPost and tries to parse every buffer
+      -- with treesitter; when a parser ABI mismatch exists this crashes and
+      -- surfaces as a Neo-tree "Error opening file" popup.
+      scope = {
+        treesitter = { enabled = false },
+      },
       dashboard = {
         preset = {
           header = table.concat({
