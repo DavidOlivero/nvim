@@ -21,7 +21,7 @@ return {
 
     opts.statusline = { -- statusline
       hl = { fg = "fg", bg = "bg" },
-      status.component.mode(),
+      status.component.mode({ mode_text = { padding = { left = 1, right = 1 } } }),
       status.component.git_branch(),
       os_component,
       status.component.file_info({
