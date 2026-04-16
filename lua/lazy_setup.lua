@@ -59,4 +59,4 @@ require("lazy").setup({
   },
 } --[[@as LazyConfig]])
 
-vim.cmd [[colorscheme catppuccin-mocha]]
+vim.cmd [[colorscheme kanagawa-wave]]
