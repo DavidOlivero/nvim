@@ -59,4 +59,4 @@ require("lazy").setup({
   },
 } --[[@as LazyConfig]])
 
-vim.cmd [[colorscheme kanagawa-wave]]
+vim.cmd [[colorscheme vague]]
